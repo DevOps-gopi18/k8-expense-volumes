@@ -97,6 +97,15 @@ spec:
       containers:
       - name: nginx
         image: joindevops/frontend:1.2.0
+        resources:
+          # soft limit
+          requests:
+            memory: "68Mi"
+            cpu: "100m"
+          limits:
+            # hard limit
+            memory: "128Mi"
+            cpu: "150m"
         ports:
         - containerPort: 8080
         volumeMounts:
